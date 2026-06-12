@@ -63,7 +63,7 @@ AKAKCE_PROJECT_SELENYUM1/
             │
             └── utility/                       # Core configuration utilities
                 └── BaseDriver.java            # WebDriver instantiation & synchronization hooks
-```text
+```
 🏗️ Technical Architecture & Implementation
 🎯 Modular Test Separation: Each user story is isolated in its own technical package, eliminating overlapping test impacts.
 
