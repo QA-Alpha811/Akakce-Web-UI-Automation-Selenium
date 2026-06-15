@@ -1,45 +1,47 @@
-# 🛒 Akakce.com E-Commerce Test Automation Project
+# 🛒 Akakçe Test Automation Project
 
 ![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=java)
-![Selenium](https://img.shields.io/badge/Selenium-4.x-green?style=for-the-badge&logo=selenium)
+![Selenium](https://img.shields.io/badge/Selenium-4.36.0-green?style=for-the-badge&logo=selenium)
+![TestNG](https://img.shields.io/badge/TestNG-7.11.0-red?style=for-the-badge)
 ![Maven](https://img.shields.io/badge/Maven-3.2.5+-blue?style=for-the-badge&logo=apache-maven)
 
-**Automated GUI Testing Framework for Akakce.com Price Comparison & E-Commerce Platform**
+**Automated GUI Testing Framework for Akakçe (akakce.com) E-commerce & Comparison Platform**
 
-[Target Site](https://www.akakce.com/)
+[Demo Site](https://www.akakce.com/)
 
 ## 📋 About The Project
 
-This repository contains a robust GUI test automation framework developed for [Akakce.com](https://www.akakce.com/), Turkey's leading price comparison and shopping platform. Built with **Java** and **Selenium WebDriver**, the framework focuses on validating critical user journey checkpoints—from initial onboarding and account security to dynamic system views and data privacy compliance (Account Deletion).
+This project is a functional GUI test automation framework built for the [Akakçe](https://www.akakce.com/) platform. Utilizing **Selenium WebDriver** and **TestNG**, the project focuses on systematically validating user creation, session authentication, and profile tracking workflows.
 
 ### ✨ Key Features
 
-- ✅ **User-Story Driven Architecture:** Test cases directly mapped to business specifications and acceptance criteria.
-- ✅ **End-to-End User Lifecycle:** Full validation of the user experience, including registration, secure session checks, and account teardown.
-- ✅ **Dynamic UI Syncing:** Explicit waits implemented within utility classes to manage asynchronous web elements smoothly.
-- ✅ **Clean Code Structure:** Modular packages grouping user stories independently to ensure high maintainability.
+- ✅ Requirement-mapped automation tracking from user story to code execution
+- ✅ Organized component separation adhering to test automation principles
+- ✅ Unified configuration architecture to isolate target environmental values
+- ✅ Automated execution logs tracking test framework outcomes
 
 ## 🛠️ Tech Stack
 
 | Technology | Version | Purpose |
 |:-----------|:--------|:--------|
 | **Java** | 21 | Programming Language |
-| **Selenium WebDriver** | 4.x | Browser Automation |
-| **Maven** | 3.2.5+ | Dependency and Build Lifecycle Management |
+| **Selenium WebDriver** | 4.36.0 | Browser Automation |
+| **TestNG** | 7.11.0 | Test Framework & Management |
+| **Maven** | 3.2.5+ | Build & Dependency Management |
 
 ## 📝 Test Scenarios (User Stories)
 
-The automation suite covers 7 core user stories derived from the product verification specifications:
+The project covers 7 comprehensive user stories mapped exactly to the implemented codebase:
 
-| ID | User Story / Feature | Description |
+| ID | User Story | Description |
 |:---|:-----------|:------------|
-| 👤 **US_101** | User Account Creation | Validates the new user registration flow ensuring mandatory profile fields (name, email, password rules) are handled. |
-| 🛡️ **US_102** | Account Verification Check | Verifies that a successfully authenticated user can view their precise registration name in the top-right profile header. |
-| 🚪 **US_103** | Logout Functionality | Ensures users can securely log out and are immediately redirected to the system authentication page. |
-| 🔑 **US_104** | User Login | Validates user authorization using correct credentials to persist account-specific preferences. |
-| 📦 **US_105** | Order List Check | Navigates to the user dashboard to verify order history visibility or the presence of appropriate empty-state messages. |
-| ✉️ **US_106** | Message Box Check | Controls the internal notification center to ensure targeted promotional campaigns and system messages render properly. |
-| 🗑️ **US_107** | Account Deletion | Validates the complete deletion flow, ensuring personal data privacy by confirming correct password entry before account termination. |
+| 🔐 **US101_UserAccountCreation** | User Account Creation | Validates successful sign-up and verifies form checks under missing input vectors |
+| 🛡️ **US102_AccountVerificationCheck** | Account Verification Check | Validates profile metadata display and active authentication status checks |
+| 🚪 **US103_LogOut** | Log Out | Asserts clean user session termination and verified UI page redirection |
+| 🔑 **US104_Login** | Login | Verifies successful web portal authentication under valid active credentials |
+| 📋 **US105_OrderListCheck** | Order List Check | Inspects past purchase lists, profile history elements, and order logs tracking |
+| ✉️ **US106_MessageBoxCheck** | Message Box Check | Verifies messaging component interfaces and customer service panel routing |
+| 🗑️ **US107_DeleteAccount** | Delete Account | Validates successful profile clearance and password security boundary failure points |
 
 ## 📁 Project Structure
 
@@ -48,25 +50,39 @@ AKAKCE_PROJECT_SELENYUM1/
 │
 ├── 📄 pom.xml                          # Maven configuration
 ├── 📄 README.md                        # Project documentation
-├── 📄 .gitignore                       # Git ignore configurations
 │
 └── src/
     └── test/
         └── java/
-            ├── US101_UserAccountCreation/     # Test classes for account registration
-            ├── US102_AccountVerificationCheck/ # Test classes for profile dashboard checks
-            ├── US103_LogOut/                  # Test classes for session termination
-            ├── US104_Login/                   # Test classes for user authentication
-            ├── US105_OrderListCheck/          # Test classes for order logs
-            ├── US106_MessageBoxCheck/         # Test classes for message center
-            ├── US107_DeleteAccount/           # Test classes for secure profile deletion
+            ├── US101_UserAccountCreation/
+            ├── US102_AccountVerificationCheck/
+            ├── US103_LogOut/
+            ├── US104_Login/
+            ├── US105_OrderListCheck/
+            ├── US106_MessageBoxCheck/
+            ├── US107_DeleteAccount/
             │
-            └── utility/                       # Core configuration utilities
-                └── BaseDriver.java            # WebDriver instantiation & synchronization hooks
+            └── utility/                # Utility and driver configuration classes
 ```
-🏗️ Technical Architecture & Implementation
-🎯 Modular Test Separation: Each user story is isolated in its own technical package, eliminating overlapping test impacts.
+⚙️ Configuration
+Test execution parameters are centralized inside the project configuration structure within the src/test/resources/ directory paths. This design ensures that target system parameters—including primary site URLs, credential properties, and driver implicit timeout constraints—remain detached from core functional evaluation code.
 
-🔄 State Validation: Advanced cross-checks ensure data consistency (e.g., matching the profile display name exactly with the registration entity).
+🏗️ Design Pattern
+This project implements the Page Object Model (POM) design pattern, which provides:
 
-🛡️ Privacy Verification: US_107 explicitly automates security-critical backend-driven UI prompts, asserting that account deletion operations cannot occur without an active, verified session.
+* Better code organization - Explicit demarcation between functional test execution scripts and UI component location selectors.
+
+* Reusability - Centralized interaction workflows and common web element strategies abstracted into reusable base helper classes.
+
+* Maintainability - Structural application frontend UI updates can be addressed single-pointedly within independent web element layers without breaking test verification code.
+
+* Readability - Test scenarios maintain high semantic clarity, reflecting programmatic operations instead of raw driver query selectors.
+
+📊 Test Reporting
+The framework integrates TestNG's built-in assertion engines and execution output handling to deliver concise, tabular status summaries:
+
+* Success and failure distribution metrics gathered across the user story suites.
+
+* Stacktrace documentation logs capture error vectors, failure points, and element visibility states during automated test cycles.
+
+* Step execution tracking measures transaction duration for critical workflows such as account deletion and customer registration forms.
