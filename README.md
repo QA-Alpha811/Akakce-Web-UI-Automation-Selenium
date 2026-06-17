@@ -2,7 +2,6 @@
 
 ![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=java)
 ![Selenium](https://img.shields.io/badge/Selenium-4.36.0-green?style=for-the-badge&logo=selenium)
-![TestNG](https://img.shields.io/badge/TestNG-7.11.0-red?style=for-the-badge)
 ![Maven](https://img.shields.io/badge/Maven-3.2.5+-blue?style=for-the-badge&logo=apache-maven)
 
 **Automated GUI Testing Framework for Akakçe (akakce.com) E-commerce & Comparison Platform**
@@ -11,14 +10,14 @@
 
 ## 📋 About The Project
 
-This project is a functional GUI test automation framework built for the [Akakçe](https://www.akakce.com/) platform. Utilizing **Selenium WebDriver** and **TestNG**, the project focuses on systematically validating user creation, session authentication, and profile tracking workflows.
+This project is a functional GUI test automation framework built for the [Akakçe](https://www.akakce.com/) platform. Utilizing core **Java** logic and **Selenium WebDriver**, the project focuses on systematically validating user creation, session authentication, and profile tracking workflows through sequential automated scripts.
 
 ### ✨ Key Features
 
 - ✅ Requirement-mapped automation tracking from user story to code execution
-- ✅ Organized component separation adhering to test automation principles
+- ✅ Sequential test execution design built directly upon core Selenium capabilities
 - ✅ Unified configuration architecture to isolate target environmental values
-- ✅ Automated execution logs tracking test framework outcomes
+- ✅ Automated execution console outputs tracking framework outcomes
 
 ## 🛠️ Tech Stack
 
@@ -26,7 +25,6 @@ This project is a functional GUI test automation framework built for the [Akakç
 |:-----------|:--------|:--------|
 | **Java** | 21 | Programming Language |
 | **Selenium WebDriver** | 4.36.0 | Browser Automation |
-| **TestNG** | 7.11.0 | Test Framework & Management |
 | **Maven** | 3.2.5+ | Build & Dependency Management |
 
 ## 📝 Test Scenarios (User Stories)
@@ -68,21 +66,21 @@ AKAKCE_PROJECT_SELENYUM1/
 Test execution parameters are centralized inside the project configuration structure within the src/test/resources/ directory paths. This design ensures that target system parameters—including primary site URLs, credential properties, and driver implicit timeout constraints—remain detached from core functional evaluation code.
 
 🏗️ Design Pattern
-This project implements the Page Object Model (POM) design pattern, which provides:
+This project implements structural separation concepts, which provides:
 
-* Better code organization - Explicit demarcation between functional test execution scripts and UI component location selectors.
+🎯 Better code organization - Explicit demarcation between functional test execution scripts and UI component interaction logics.
 
-* Reusability - Centralized interaction workflows and common web element strategies abstracted into reusable base helper classes.
+🔄 Reusability - Centralized driver instantiation workflows and common web element synchronization strategies abstracted into reusable utility helper classes.
 
-* Maintainability - Structural application frontend UI updates can be addressed single-pointedly within independent web element layers without breaking test verification code.
+🛡️ Maintainability - Frontend UI updates can be addressed within consolidated element identifier layers without altering the underlying transaction test steps.
 
-* Readability - Test scenarios maintain high semantic clarity, reflecting programmatic operations instead of raw driver query selectors.
+📖 Readability - Test scenarios maintain distinct semantic clarity, reflecting sequential user operations instead of scattered raw driver commands.
 
 📊 Test Reporting
-The framework integrates TestNG's built-in assertion engines and execution output handling to deliver concise, tabular status summaries:
+The framework integrates native Java control structures and console logging to track automation milestones:
 
-* Success and failure distribution metrics gathered across the user story suites.
+📈 Real-time runtime logs track successful operations and validation check checkpoints across the execution path.
 
-* Stacktrace documentation logs capture error vectors, failure points, and element visibility states during automated test cycles.
+📋 Stacktrace console summaries capture error vectors, failure points, and element visibility states during automated execution cycles.
 
-* Step execution tracking measures transaction duration for critical workflows such as account deletion and customer registration forms.
+⏱️ Basic execution flow analysis captures duration boundaries for critical workflows such as account deletion and customer registration forms.
